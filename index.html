@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marobrain™ — Natural Cognitive Support Supplement</title>
+	<meta name="keywords" content="Marobrain ,Marobrain Buy,Marobrain Order ,Order Marobrain">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Trustworthy Blue Theme */
+            --primary: #0F172A; /* Slate 900 - Dark Blue Base */
+            --primary-hover: #1E293B; /* Slate 800 */
+            --accent: #2563EB; /* Blue 600 - Highlight */
+            --bg-main: #F8FAFC; /* Slate 50 - Off-white */
+            --bg-white: #FFFFFF;
+            --bg-alt: #F1F5F9; /* Slate 100 */
+            --text-dark: #0F172A; /* Slate 900 */
+            --text-light: #475569; /* Slate 600 */
+            --text-muted: #64748B; /* Slate 500 */
+            --border-color: #CBD5E1; /* Slate 300 */
+            
+            /* Info/Success Colors */
+            --info-bg: #EFF6FF; 
+            --info-border: #BFDBFE;
+            --info-text: #1E3A8A;
+
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Typography */
+        h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        h1 { font-size: 2.5rem; letter-spacing: -0.02em; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        p { color: var(--text-light); margin-bottom: 1rem; }
+        .section-label {
+            color: var(--accent); font-weight: 700; font-size: 0.875rem; text-transform: uppercase;
+            letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 1.5rem; font-weight: 600; border-radius: var(--radius-md);
+            transition: all 0.2s ease; cursor: pointer; text-align: center; border: 2px solid transparent;
+        }
+        .btn-primary { background-color: var(--accent); color: var(--bg-white); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background-color: #1D4ED8; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline { background-color: transparent; color: var(--bg-white); border-color: var(--bg-white); }
+        .btn-outline:hover { background-color: rgba(255,255,255,0.1); }
+        .btn-full { width: 100%; }
+        
+        /* Layout Grids */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        
+        @media (max-width: 992px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+        }
+
+        /* Header */
+        header { background-color: var(--bg-white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 50; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.75rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; justify-content: center;}
+        .nav-links a { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-dark); }
+        
+        @media (max-width: 1100px) {
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--bg-white); flex-direction: column; padding: 1rem; box-shadow: var(--shadow-md); align-items: flex-start;
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .header-cta { display: none; }
+        }
+
+        /* Sections */
+        section { padding: 4rem 0; }
+        .section-alt { background-color: var(--bg-white); }
+        
+        /* Hero */
+        .hero { background-color: var(--primary); color: var(--bg-white); padding: 5rem 0 4rem; }
+        .hero h1, .hero h3 { color: var(--bg-white); }
+        .hero p { color: #CBD5E1; }
+        .badge-text { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #93C5FD; font-size: 0.75rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 2rem; margin-bottom: 1.5rem; letter-spacing: 0.05em; border: 1px solid rgba(37, 99, 235, 0.5);}
+        .hero-disclaimer { font-size: 0.75rem; color: #94A3B8 !important; margin-top: 1.5rem; font-style: italic; }
+        .hero-image-placeholder { background-color: #1E293B; border-radius: var(--radius-lg); height: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; color: #64748B; overflow: hidden; border: 1px solid #334155;}
+        .format-callout { background-color: rgba(255,255,255,0.05); color: var(--bg-white); font-weight: 600; padding: 0.75rem; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 1rem; display: inline-block; border: 1px solid rgba(255,255,255,0.1);}
+        
+        /* Info/Callout Boxes */
+        .callout-box { background-color: var(--info-bg); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+        .callout-box p { color: var(--info-text); font-weight: 500; margin: 0; }
+        .mechanism-card { border-left: 4px solid var(--accent); padding-left: 1.5rem; margin-bottom: 2rem; }
+
+        /* Cards */
+        .card { background: var(--bg-white); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+        /* Review Cards */
+        .review-card { background: var(--bg-white); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; display: flex; flex-direction: column;}
+        .review-header { display: flex; align-items: center; margin-bottom: 1rem; }
+        .reviewer-info { margin-left: 1rem; }
+        .reviewer-name { font-weight: 700; color: var(--text-dark); }
+        .reviewer-meta { font-size: 0.8rem; color: var(--text-muted); }
+        .review-text { font-style: italic; color: var(--text-light); flex-grow: 1; margin-bottom: 1.5rem;}
+        
+        /* Pricing */
+        .pricing-card { display: flex; flex-direction: column; height: 100%; text-align: center; }
+        .pricing-highlight { border: 2px solid var(--accent); transform: scale(1.05); }
+        @media (max-width: 768px) { .pricing-highlight { transform: scale(1); } }
+        .pricing-badge { background: var(--accent); color: white; padding: 0.25rem 1rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-radius: 0 0 var(--radius-md) var(--radius-md); display: inline-block; margin: -2rem auto 1rem; }
+        .price-display { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin: 1.5rem 0; }
+        .pricing-features { text-align: left; margin-bottom: 2rem; flex-grow: 1; }
+        .pricing-features li { margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: start; }
+        .pricing-features li::before { content: "✓"; color: var(--accent); margin-right: 0.5rem; font-weight: bold; }
+        
+        /* FAQ */
+        .accordion-item { border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; background: var(--bg-white); }
+        .accordion-header { width: 100%; text-align: left; padding: 1.25rem; font-size: 1rem; font-weight: 600; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-dark); }
+        .accordion-content { padding: 0 1.25rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .accordion-content p { padding-bottom: 1.25rem; margin: 0; }
+        
+        /* Footer */
+        footer { background-color: var(--primary); color: #F8FAFC; padding: 4rem 0 2rem; }
+        footer a { color: #94A3B8; transition: color 0.2s; }
+        footer a:hover { color: #FFFFFF; }
+        footer h4 { color: #FFFFFF; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        footer p { color: #94A3B8; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-disclaimer { border-top: 1px solid #1E293B; padding-top: 2rem; text-align: center; font-size: 0.8rem; color: #94A3B8; }
+        
+        @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="order.html" class="logo">Marobrain</a>
+            <nav class="nav-links">
+                <a href="#about">What Is It</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#ingredients">Ingredients</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a href="order.html" class="btn btn-primary header-cta" style="background-color: var(--primary); color: white;">Order Now</a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="grid-2" style="margin-bottom: 2rem;">
+                <div>
+                    <span class="badge-text">COGNITIVE SUPPORT • NOOTROPIC</span>
+                    <h1>Marobrain™ — Natural Cognitive Support Supplement</h1>
+                    <h3>Marobrain is formulated to help support sharper memory, faster focus, and overall mental clarity for your daily life.</h3>
+                    
+                    <div class="format-callout">
+                        Once-a-day capsule | 60-capsule bottle | Botanical proprietary blend
+                    </div>
+
+                    <p>Marobrain is marketed online as a natural cognitive support supplement — a nootropic capsule positioned to improve memory, focus, mental clarity, and overall brain health. Promotional pages describe a "once-a-day" formula featuring a botanical proprietary blend designed to support adults dealing with everyday brain fog, occasional name-forgetting, and mental fatigue.</p>
+                    
+                    <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; font-weight: 600; color: #93C5FD;">
+                        <span>✓ Focus & Clarity</span>
+                        <span>✓ Memory Support</span>
+                        <span>✓ Daily Energy</span>
+                        <span>✓ Plant-Based Ingredients</span>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                        <a href="#pricing" class="btn btn-primary">Check Availability</a>
+                        <a href="#about" class="btn btn-outline">Learn More</a>
+                    </div>
+                    <p class="hero-disclaimer">*Marobrain is a dietary supplement marketed for cognitive-support wellness. It is not a medicine or a treatment for any medical condition, including Alzheimer's disease or dementia. Individual experiences vary.</p>
+                </div>
+                <div>
+                    <!-- Image Placeholder for Hero -->
+                    <div class="hero-image-placeholder">
+                        <img src="images/marobrain.png" alt="Marobrain Capsule Bottle" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. "What Is Marobrain?" Section -->
+    <section class="section-alt" id="about">
+        <div class="container grid-2">
+            <div>
+                <span class="section-label">GET TO KNOW THE PRODUCT</span>
+                <h2>What Is Marobrain?</h2>
+                <p style="margin-bottom: 2rem;">Marobrain is a natural cognitive support supplement — a nootropic capsule positioned to help improve memory, focus, mental clarity, and overall brain health. The formula is designed as a "once-a-day" addition to your morning routine, utilizing a proprietary blend of botanicals to support energy and brain performance for adults navigating busy lifestyles.</p>
+                
+                <h3 style="font-size: 1.25rem;">Product Positioning and Format</h3>
+                <p>Packaged in a convenient 60-capsule bottle, the product is offered directly to consumers online. Pricing is typically presented starting at $49 per bottle, with multi-bottle packages available for those looking to maintain a consistent daily routine. A 60-day money-back guarantee is commonly provided to allow new users to trial the product.</p>
+            </div>
+            <div>
+                <div style="background-color: var(--bg-main); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); height: 100%;">
+                    <h3 style="font-size: 1.25rem;">Who Is Marobrain Marketed Toward?</h3>
+                    <p>Marobrain is marketed toward adults concerned about maintaining their cognitive edge, combating occasional brain fog, and reducing mental fatigue. It appeals particularly to individuals looking for a natural, supplement-based approach to everyday wellness.</p>
+                    
+                    <h3 style="font-size: 1.25rem; margin-top: 1.5rem;">What Should You Know Before Purchasing?</h3>
+                    <p>As with any dietary supplement, we recommend reviewing the complete ingredient declaration, serving size, and usage directions on the product label. Make sure the available product information aligns with your individual wellness goals.</p>
+                    
+                    <div class="callout-box" style="margin-bottom: 0;">
+                        <p>Consider your individual health circumstances before making a decision — and always speak with a qualified healthcare professional if you have specific cognitive concerns or are taking other medications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. "How Does Marobrain Work?" Section -->
+    <section id="how-it-works">
+        <div class="container" style="max-width: 900px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-label">THE SCIENCE BEHIND THE FORMULA</span>
+                <h2>How Does Marobrain Work?</h2>
+                <p>Marobrain's promotional materials describe a multi-pathway approach to cognitive wellness, utilizing botanical extracts to support the brain's natural environment.</p>
+            </div>
+
+            <div class="mechanism-card">
+                <h3>Mechanism 1: Neuro-Protective Antioxidants</h3>
+                <p>A core aspect of the formula's design is the delivery of neuro-protective antioxidants and cognitive support nutrients. By introducing specific botanical elements—such as those featured in the popular "honey and butterfly pea flower" combinations—the product aims to support a balanced chemical environment in the brain, helping to clear away everyday mental fatigue so that focus can return to normal.</p>
+            </div>
+
+            <div class="mechanism-card">
+                <h3>Mechanism 2: Nootropic Support</h3>
+                <p>The second pathway focuses on providing the brain with the foundational nutrients it needs to manage the demands of stress, aging, or poor sleep. Nootropic blends are traditionally used to help smooth out energy levels and support the chemical messengers responsible for clarity and recall.</p>
+            </div>
+
+            <div class="mechanism-card">
+                <h3>Mechanism 3: Convenience and Routine</h3>
+                <p>A major element of Marobrain's effectiveness is its convenience positioning: a simple daily capsule that requires no complex dietary changes. Consistency is key when taking botanical supplements, and a frictionless, once-a-day habit makes it easier to maintain a cognitive support routine over the long term.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. "Key Ingredients" Section -->
+    <section class="section-alt" id="ingredients">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">FORMULA OVERVIEW</span>
+                <h2>Marobrain Key Ingredients</h2>
+                <p>Marobrain utilizes a proprietary blend of botanicals and nutrients traditionally associated with cognitive wellness.</p>
+            </div>
+
+            <div class="grid-2" style="gap: 3rem;">
+                <div>
+                    <h3 style="color: var(--primary); font-size: 1.25rem;">Botanical Nootropic Blends</h3>
+                    <p>Various formulations of Marobrain highlight different botanical approaches to brain health. Some profiles focus on adaptogenic roots like Tongkat Ali (Eurycoma longifolia) and Wild Yam extract (Dioscorea villosa), which are traditionally used for general vitality and concentration support.</p>
+                    
+                    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 1.5rem;">Antioxidant Support</h3>
+                    <p>Other promotional materials emphasize the benefits of honey and butterfly pea flower extract, ingredients rich in antioxidants that are popular in holistic wellness routines for their purported ability to support a healthy internal environment.</p>
+                </div>
+                
+                <div>
+                    <div style="background: var(--bg-main); border: 1px solid var(--border-color); padding: 2rem; border-radius: var(--radius-lg); height: 100%;">
+                        <h3 style="color: var(--primary); font-size: 1.25rem; margin-bottom: 1rem;">Safety Information and Responsible Use</h3>
+                        <p>To ensure you are getting the most accurate information regarding the specific formulation you receive, always refer to the Supplement Facts panel printed on your bottle. </p>
+                        <p>Because dietary supplements affect everyone differently, it is important to review the label for any personal allergens. If you are pregnant, nursing, taking medications, or have a known medical condition, consult your physician before adding Marobrain to your routine.</p>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">Dietary supplements are not substitutes for medical diagnosis or treatment. Marobrain is not intended to diagnose, treat, cure or prevent any disease or medical condition, including Alzheimer's disease or dementia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. "Benefits" Section -->
+    <section id="benefits">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">WHAT THE FORMULA IS MARKETED TO SUPPORT</span>
+                <h2>Benefits of Marobrain</h2>
+                <p>Based on the product's design and positioning, users may experience the following supportive benefits when incorporating Marobrain into a healthy lifestyle.</p>
+            </div>
+
+            <div class="grid-2">
+                <ul class="pricing-features" style="margin-bottom: 0;">
+                    <li><strong>Once-daily capsule format</strong> — convenient for people who want a low-effort cognitive support routine.</li>
+                    <li><strong>Natural positioning</strong> — appeals to consumers seeking plant-based nootropic options.</li>
+                    <li><strong>Supports memory and focus</strong> — formulated to help with everyday brain fog and name-forgetting.</li>
+                    <li><strong>Antioxidant activity</strong> — provides theoretical support for long-term brain health and vitality.</li>
+                    <li><strong>Energy and brain performance</strong> — supports mental stamina alongside daily clarity.</li>
+                </ul>
+                <ul class="pricing-features" style="margin-bottom: 0;">
+                    <li><strong>60-day money-back guarantee</strong> — provides a comfortable risk-free window for new users to trial the product.</li>
+                    <li><strong>Made in the USA</strong> — manufactured domestically to ensure quality standards.</li>
+                    <li><strong>Multi-bottle pricing tiers</strong> — longer trials are available at a lower per-bottle cost.</li>
+                    <li><strong>No prescription required</strong> — accessible as an over-the-counter dietary supplement.</li>
+                    <li><strong>Targeted support for adults</strong> — addresses genuine concerns about maintaining cognitive sharpness over time.</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 2.5rem;">*These benefit statements describe the product's marketing positioning. Individual experiences and results will vary based on diet, activity, sleep, stress, and overall health.</p>
+        </div>
+    </section>
+
+    <!-- 6. "Product Research Guide" Section -->
+    <section class="section-alt">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">YOUR PRODUCT GUIDE</span>
+                <h2>Four Simple Steps to Start with Marobrain</h2>
+                <p>If you are considering Marobrain as part of your wellness routine, these practical steps will help you get started safely and effectively.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.1rem;">Step 1: Review the Label</h3>
+                    <p style="font-size: 0.9rem;">When your bottle arrives, review the Supplement Facts panel. Familiarize yourself with the proprietary blend and ensure the ingredients align with your dietary preferences and wellness goals.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.1rem;">Step 2: Read Usage Details</h3>
+                    <p style="font-size: 0.9rem;">Marobrain is marketed as a once-a-day capsule. The practical recommendation is to follow the label instructions carefully. Do not exceed the recommended serving size, as consistency over time is more important than taking larger amounts.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.1rem;">Step 3: Choose Your Package</h3>
+                    <p style="font-size: 0.9rem;">Select the package that fits your needs. Many users start with a 3-bottle or 6-bottle supply to give the supplement enough time (60-90 days) to build up in their system and produce noticeable changes.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary); font-size: 1.1rem;">Step 4: Consider Your Health</h3>
+                    <p style="font-size: 0.9rem;">If you take medication, have allergies, are pregnant or breastfeeding, or have ongoing health concerns, always consult a healthcare professional before using a new supplement to ensure it is appropriate for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. "Pricing" Section -->
+    <section id="pricing">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">CHOOSE YOUR PACKAGE SIZE</span>
+                <h2>Marobrain Pricing & Available Offers</h2>
+                <p>Review the available Marobrain package options below. Select a multi-bottle package for the best value and uninterrupted daily support.</p>
+            </div>
+
+            <div class="grid-3" style="align-items: center;">
+                <!-- Starter Package -->
+                <div class="card pricing-card">
+                    <div style="background: var(--bg-alt); height: 150px; display: flex; align-items: center; justify-content: center; margin: -2rem -2rem 1.5rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden;">
+                        <img src="images/marobrain1bottle.png" alt="Starter Package - 1 Bottle" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="quantity-badge" style="font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem;">1 BOTTLE</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">STARTER PACKAGE</h3>
+                    <div class="price-display">FROM $49 PER BOTTLE</div>
+                    
+                    <ul class="pricing-features">
+                        <li>30-Day Supply</li>
+                        <li>Standard Shipping</li>
+                        <li>60-Day Guarantee</li>
+                    </ul>
+                    
+                    <button class="btn btn-outline btn-full" style="border-color: var(--primary); color: var(--primary);"><a href="order.html">Order Now</a></button>
+                </div>
+
+                <!-- Popular Package -->
+                <div class="card pricing-card pricing-highlight">
+                    <span class="pricing-badge">Popular Choice</span>
+                    <div style="background: var(--bg-alt); height: 150px; display: flex; align-items: center; justify-content: center; margin: 0 -2rem 1.5rem; overflow: hidden;">
+                         <img src="images/marobrain3bottle.png" alt="Popular Package - 3 Bottles" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="quantity-badge" style="font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">3 BOTTLES</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">POPULAR PACKAGE</h3>
+                    <div class="price-display" style="color: var(--accent);">FROM $39 PER BOTTLE</div>
+                    
+                    <ul class="pricing-features">
+                        <li>90-Day Supply</li>
+                        <li>Free US Shipping</li>
+                        <li>60-Day Guarantee</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary btn-full"><a href="">Order Now </a></button>
+                </div>
+
+                <!-- Value Package -->
+                <div class="card pricing-card">
+                    <div style="background: var(--bg-alt); height: 150px; display: flex; align-items: center; justify-content: center; margin: -2rem -2rem 1.5rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden;">
+                         <img src="images/marobrain6bottle.png" alt="Value Package - 6 Bottles" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="quantity-badge" style="font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem;">6 BOTTLES</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">VALUE PACKAGE</h3>
+                    <div class="price-display">FROM $29 PER BOTTLE</div>
+                    
+                    <ul class="pricing-features">
+                        <li>180-Day Supply</li>
+                        <li>Free US Shipping</li>
+                        <li>60-Day Guarantee</li>
+                    </ul>
+                    
+                    <button class="btn btn-outline btn-full" style="border-color: var(--primary); color: var(--primary);"><a href="order.html">Order Now</a></button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 8. "Money-Back Guarantee" Section -->
+    <section class="section-alt" id="guarantee">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-label" style="justify-content: center;">ORDER WITH CONFIDENCE</span>
+                <h3 style="margin-bottom: 1.5rem; font-size: 2rem;">60-Day Money-Back Guarantee</h3>
+                <p style="color: var(--text-dark); font-size: 1.1rem;">Marobrain offers a money-back guarantee, allowing you a substantial trial window to experience the product. If you are not satisfied with your results within the first 60 days, you can request a refund based on the seller's return policies.</p>
+                <p style="color: var(--text-light); margin-top: 1.5rem;">Be sure to keep your order confirmation emails and review the return instructions provided at checkout to ensure a smooth process should you need to utilize the guarantee.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. "Customer Reviews" Section -->
+    <section id="reviews">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <span class="section-label">WHAT USERS ARE SAYING</span>
+                <h2>Marobrain Customer Experiences</h2>
+                <p style="font-style: italic;">The following reviews are illustrative examples based on typical customer feedback themes. Individual results will vary.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="review-card">
+                    <div class="review-text">
+                        "I decided to try Marobrain because I was looking for a simple, once-a-day supplement to add to my morning routine. I like that the capsules are easy to take and don't require me to mix any powders. Over the past month, I've felt a bit more organized in my daily tasks. It's a nice addition to my overall wellness plan."
+                    </div>
+                    <div class="review-header" style="margin-bottom: 0; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <div class="reviewer-info" style="margin-left: 0;">
+                            <div class="reviewer-name">Patricia L., 52</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-text">
+                        "I work long hours and was dealing with afternoon mental fatigue. I bought the 3-bottle package to give it a fair shot. While it wasn't an overnight change, by the third week I started noticing that my focus was steadier during long meetings. I appreciate the natural botanical approach compared to heavy energy drinks."
+                    </div>
+                    <div class="review-header" style="margin-bottom: 0; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <div class="reviewer-info" style="margin-left: 0;">
+                            <div class="reviewer-name">David R., 47</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-text">
+                        "I'm generally careful about supplements, but I was going through a stressful period and wanted some extra cognitive support. Marobrain fit easily into my vitamin routine. It took a few weeks to feel the subtle shifts in my clarity, but I'm happy I stuck with it. It feels like a solid, supportive product for busy days."
+                    </div>
+                    <div class="review-header" style="margin-bottom: 0; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                        <div class="reviewer-info" style="margin-left: 0;">
+                            <div class="reviewer-name">Monica S., 39</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. "FAQ" Section -->
+    <section class="section-alt" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-label">HELPFUL PRODUCT INFORMATION</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What is Marobrain?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Marobrain is marketed online as a natural cognitive support supplement — a nootropic capsule positioned to help maintain memory, focus, mental clarity, and overall brain health for adults.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How long before I see results?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Because dietary supplements work with your body's natural systems, results vary from person to person. Many users report subtle shifts in energy and focus within a few weeks, but it is generally recommended to use the product consistently for 60 to 90 days to evaluate its full supportive benefits.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What is the recommended dosage?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Marobrain is designed as a once-a-day capsule. Always follow the specific instructions printed on the bottle you receive, and do not exceed the recommended daily serving.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Does Marobrain have a money-back guarantee?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, Marobrain offers a money-back guarantee (typically 60 days) so you can trial the product with confidence. Please review the return policies on the checkout page for exact terms and instructions.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Can I use it with other supplements or medications?
+                        <span>+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>If you are taking prescription medications, are pregnant or nursing, or have a known medical condition, it is highly recommended to consult a qualified healthcare professional before adding Marobrain or any new supplement to your routine to ensure it is appropriate for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Final CTA -->
+    <section>
+        <div class="container grid-2" style="align-items: center;">
+            <div style="background: var(--bg-alt); padding: 3rem; border-radius: var(--radius-lg); text-align: center;">
+                <div style="height: 150px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; overflow: hidden; border-radius: var(--radius-md);">
+                    <img src="images/marobrain.png" alt="Marobrain Capsule Bottle Package" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h2>Ready to Support Your Cognitive Health?</h2>
+                <p>Explore the available Marobrain packages and start your journey toward better focus and mental clarity today. Choose the package that fits your goals and take advantage of the money-back guarantee.</p>
+                <button class="btn btn-primary" style="margin-top: 1rem;"><a href="order.html">Order Now</button>
+            </div>
+            
+            <div style="padding: 2rem;">
+                <span class="section-label">SUPPLEMENT EDUCATION</span>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Healthy Habits & Responsible Product Use</h3>
+                <p>A cognitive-support supplement works best when paired with healthy lifestyle choices, including a balanced diet, regular exercise, and adequate sleep. Always read the product label and usage directions carefully.</p>
+                
+                <hr style="border: 0; height: 1px; background: var(--border-color); margin: 2rem 0;">
+                
+                <h4 style="font-size: 1rem; color: var(--text-dark);">About This Information:</h4>
+                <p style="font-size: 0.85rem;">This page provides general information about Marobrain, a nootropic dietary supplement marketed for cognitive-support wellness. This content is educational and does not replace professional medical advice. If you have significant concerns about memory or cognitive function, please speak with a healthcare professional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em; margin-bottom: 1rem;">Marobrain</div>
+                    <p>Marobrain is a nootropic dietary supplement designed to support cognitive wellness, memory, and focus for adults.</p>
+                </div>
+                
+                <!-- Product Guide -->
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="#about">What is Marobrain?</a></li>
+                        <li><a href="#ingredients">Ingredients</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Legal -->
+                <div>
+                    <h4>Legal & Support</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Disclaimers -->
+            <div class="footer-disclaimer">
+                <p style="margin-bottom: 0.5rem;">Marobrain is a nootropic dietary supplement marketed for cognitive-support wellness and general well-being. Product descriptions do not guarantee individual results.</p>
+                <p>This website does not provide medical advice and does not claim that Marobrain diagnoses, treats, cures or prevents any disease or medical condition, including Alzheimer's disease or dementia. Consult a qualified healthcare professional about personal health concerns or before starting a new supplement.</p>
+                <p style="margin-top: 1.5rem; font-size: 0.75rem;">&copy; 2026 Marobrain. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS for Interactivity -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // FAQ Accordion Logic
+        const accordions = document.querySelectorAll('.accordion-header');
+
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                // Toggle active class on header
+                this.classList.toggle('active');
+                
+                // Toggle symbol
+                const symbol = this.querySelector('span');
+                symbol.textContent = this.classList.contains('active') ? '−' : '+';
+
+                // Toggle content visibility
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
